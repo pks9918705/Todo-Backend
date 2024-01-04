@@ -1,0 +1,130 @@
+Certainly! Below is an example of documentation for your API endpoints, including details about request methods, URL paths, expected request body format, and response formats.
+
+ API Documentation
+
+ 1. User Login
+
+- Endpoint: `POST /login`
+- Request Method: `POST`
+- Request Body Format:
+  ```json
+  {
+    "username": "john_doe",
+    "password": "password123"
+  }
+  ```
+- Response Format:
+  ```json
+  {
+    "token": "JWT_TOKEN_HERE"
+  }
+  ```
+- Description: Authenticates a user and returns a JWT token for accessing protected endpoints.
+
+ 2. Create a New Note
+
+- Endpoint: `POST /notes`
+- Request Method: `POST`
+- Request Body Format:
+  ```json
+  {
+    "title": "Note Title",
+    "content": "Note Content"
+  }
+  ```
+- Response Format:
+  ```json
+  {
+    "_id": "NOTE_ID_HERE",
+    "title": "Note Title",
+    "content": "Note Content",
+    "createdAt": "2022-01-04T12:34:56.789Z",
+    "updatedAt": "2022-01-04T12:34:56.789Z"
+  }
+  ```
+- Description: Creates a new note with the provided title and content.
+
+ 3. Retrieve All Notes
+
+- Endpoint: `GET /notes`
+- Request Method: `GET`
+- Response Format:
+  ```json
+  [
+    {
+      "_id": "NOTE_ID_1",
+      "title": "Note Title 1",
+      "content": "Note Content 1",
+      "createdAt": "2022-01-04T12:34:56.789Z",
+      "updatedAt": "2022-01-04T12:34:56.789Z"
+    },
+    {
+      "_id": "NOTE_ID_2",
+      "title": "Note Title 2",
+      "content": "Note Content 2",
+      "createdAt": "2022-01-04T12:34:56.789Z",
+      "updatedAt": "2022-01-04T12:34:56.789Z"
+    }
+  ]
+  ```
+- Description: Retrieves a list of all notes.
+
+ 4. Retrieve a Specific Note
+
+- Endpoint: `GET /notes/:id`
+- Request Method: `GET`
+- URL Parameter:
+  - `id`: The ID of the note to retrieve
+- Response Format:
+  ```json
+  {
+    "_id": "NOTE_ID_HERE",
+    "title": "Note Title",
+    "content": "Note Content",
+    "createdAt": "2022-01-04T12:34:56.789Z",
+    "updatedAt": "2022-01-04T12:34:56.789Z"
+  }
+  ```
+- Description: Retrieves details of a specific note identified by its ID.
+
+ 5. Update a Specific Note
+
+- Endpoint: `PUT /notes/:id`
+- Request Method: `PUT`
+- URL Parameter:
+  - `id`: The ID of the note to update
+- Request Body Format:
+  ```json
+  {
+    "title": "Updated Note Title",
+    "content": "Updated Note Content"
+  }
+  ```
+- Response Format:
+  ```json
+  {
+    "_id": "NOTE_ID_HERE",
+    "title": "Updated Note Title",
+    "content": "Updated Note Content",
+    "createdAt": "2022-01-04T12:34:56.789Z",
+    "updatedAt": "2022-01-04T12:34:56.789Z"
+  }
+  ```
+- Description: Updates the title and content of a specific note identified by its ID.
+
+ 6. Delete a Specific Note
+
+- Endpoint: `DELETE /notes/:id`
+- Request Method: `DELETE`
+- URL Parameter:
+  - `id`: The ID of the note to delete
+- Response Format:
+  ```json
+  {} (No content)
+  ```
+- Description: Deletes a specific note identified by its ID.
+
+ Note:
+
+- Replace `JWT_TOKEN_HERE`, `NOTE_ID_HERE`, `Note Title`, `Note Content`, `Updated Note Title`, and `Updated Note Content` with actual values in the examples.
+- Ensure proper authentication by including the JWT token in the request headers for protected endpoints.
